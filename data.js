@@ -8,7 +8,8 @@ const spil = [
         vibe: ["Performance", "Sjovt",],
         antalSpillere: [4,5,6,7,8],
         spilletid: 30-60,
-        samarbejdsspil: true
+        samarbejdsspil: true,
+        sprog: ["Dansk",],
     },
     {
         titel: "Codenames",
@@ -17,7 +18,8 @@ const spil = [
         vibe: ["Samarbejde", "Strategi",],
         antalSpillere: [2,3,4,5,6,7,8],
         spilletid: 15-25,
-        samarbejdsspil: true
+        samarbejdsspil: true,
+         sprog: ["Dansk", "Engelsk",],
     },
     {
         titel: "Skyjo",
@@ -26,7 +28,8 @@ const spil = [
         vibe: ["konkurrence", "hygge",],
         antalSpillere: [2,3,4,5,6,7,8],
         spilletid: 20-30,
-        samarbejdsspil: false
+        samarbejdsspil: false,
+        sprog: ["Dansk", "Engelsk",],
     },
     {
         titel: "Uno",
@@ -35,7 +38,8 @@ const spil = [
         vibe: ["Familiespil", "Held",],
         antalSpillere: [2,3,4,5,6,7,8],
         spilletid: 15-30,
-        samarbejdsspil: false
+        samarbejdsspil: false,
+        sprog: ["Dansk", "Engelsk",],
     },
     {
         titel: "Skipbo",
@@ -44,7 +48,8 @@ const spil = [
         vibe: ["Hygge", "Held", "Familiespil"],
         antalSpillere: [2,3,4,5,6,7,8],
         spilletid: 20-30,
-        samarbejdsspil: true
+        samarbejdsspil: true,
+        sprog: ["Dansk", "Engelsk",],
     },
     {
         titel: "Partners",
@@ -53,16 +58,18 @@ const spil = [
         vibe: ["Strategi", "Familiespil",],
         antalSpillere: [4],
         spilletid: 30-45,
-        samarbejdsspil: true
+        samarbejdsspil: true,
+        sprog: ["Dansk", "Engelsk",],
     },
     {
-        titel: "Bezzewizzer",
+        titel: "Bezzerwizzer",
         type: "Quizspil",
         genre: "Individuelt/Hold",
         vibe: ["Trivia", "Strategi",],
         antalSpillere: [2,3,4,5,6,7,8],
         spilletid: 60-90,
-        samarbejdsspil: true
+        samarbejdsspil: true,
+        sprog: ["Dansk",],
     },
     {
         titel: "Carcasonne",
@@ -71,7 +78,8 @@ const spil = [
         vibe: ["Strategi", "Landscaping",],
         antalSpillere: [2,3,4,5],
         spilletid: 30-45,
-        samarbejdsspil: false
+        samarbejdsspil: false,
+        sprog: ["Dansk", "Engelsk",],
     },
     {
         titel: "Det Dårlige Selskab",
@@ -80,7 +88,8 @@ const spil = [
         vibe: ["Fest", "Grin", "God stemning"],
         antalSpillere: [3,4,5,6,7,8,9,10,11,12,13,14,15,16],
         spilletid: 30-50,
-        samarbejdsspil: false
+        samarbejdsspil: false,
+        sprog: ["Dansk",],
     },
     {
         titel: "Hitser",
@@ -89,7 +98,8 @@ const spil = [
         vibe: ["Musik", "Fest stemning",],
         antalSpillere: [1,2,3,4,5,6,7,8],
         spilletid: 30,
-        samarbejdsspil: true
+        samarbejdsspil: true,
+        sprog: ["Dansk", "Engelsk",],
     },
     {
         titel: "One Night Werewolf",
@@ -98,7 +108,8 @@ const spil = [
         vibe: ["Rollespil", "Murder mystery", "Mind game"],
         antalSpillere: [3,4,5,6,7,8,9,10],
         spilletid: 10-15,
-        samarbejdsspil: true
+        samarbejdsspil: true,
+        sprog: ["Engelsk",],
     },
     {
         titel: "Secret Hitler",
@@ -107,16 +118,8 @@ const spil = [
         vibe: ["Mindgame", "Manipulation", "Rollespil",],
         antalSpillere: [1,2,3,4,5,6,7,8],
         spilletid: 30-45,
-        samarbejdsspil: true
-    },
-    {
-        titel: "Titel",
-        type: "xx",
-        genre: "xxx",
-        vibe: ["xxx", "xxx",],
-        antalSpillere: [1,2,3,4,5,6,7,8],
-        spilletid: 0,
-        samarbejdsspil: true
+        samarbejdsspil: true,
+        sprog: ["Engelsk",],
     },
     
 ];
