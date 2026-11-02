@@ -43,7 +43,7 @@ const spil = [
         genre: "Kortspil",
         vibe: ["Hygge", "Held", "Familiespil"],
         antalSpillere: [2,3,4,5,6,7,8],
-        spilletid: 20-30
+        spilletid: 20-30,
         samarbejdsspil: true
     },
     {
