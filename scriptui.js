@@ -108,7 +108,6 @@ function showSpilDialog(game) {
 document.getElementById('dialog-close').addEventListener('click', () => dialog.close());
 
 
-filterToggle.addEventListener('click', () => {
+filterToggle.addEventListener("click", () => {
     window.location.href = "filter.html";
 });
-

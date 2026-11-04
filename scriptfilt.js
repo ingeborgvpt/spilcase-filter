@@ -77,18 +77,38 @@ function filtrerSpil() {
         );
     }
 
-    // SØGEFELT
-    const søgefelt = document.getElementById("search-input");
+  const søgefelt = document.getElementById("search-input");
 
-    if (søgefelt && søgefelt.value.trim()) {
-        const søgning = søgefelt.value.toLowerCase().trim();
+if (søgefelt && søgefelt.value.trim()) {
+    const søgning = søgefelt.value.toLowerCase().trim();
 
-        filteredSpil = filteredSpil.filter(game =>
-            game.titel.toLowerCase().includes(søgning) ||
-            game.type.toLowerCase().includes(søgning) ||
-            String(game.genre).toLowerCase().includes(søgning)
-        );
-    }
+    filteredSpil = filteredSpil.filter(game => {
+
+        const spillere = Array.isArray(game.antalSpillere)
+            ? game.antalSpillere.map(antal => `${antal} spillere`).join(" ")
+            : "";
+
+        const søgetekst = [
+            game.titel,
+            game.type,
+            game.genre,
+            game.vibe,
+            game.sprog,
+            game.sværhedsgrad,
+            game.producent,
+            game.udvikler,
+            game.spilletid,
+            game.spilletid !== undefined ? `${game.spilletid} min` : "",
+            spillere
+        ]
+        .flat()
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+        return søgetekst.includes(søgning);
+    });
+}
     
     // VIS KUN DE SPIL, DER PASSER
     displaySpil(filteredSpil);
