@@ -10,36 +10,70 @@ const filterToggle = document.getElementById('filter-toggle');
 const spilContainer = document.getElementById('products-container');
 
 function displaySpil(spilToDisplay) {
-    spilContainer.innerHTML = '';
+    spilContainer.innerHTML = "";
 
     if (spilToDisplay.length === 0) {
-        spilContainer.innerHTML = '<p class="no-products">Ingen spil fundet. Prøv at justere dine filtre.</p>';
+        spilContainer.innerHTML =
+            '<p class="no-products">Ingen spil fundet.</p>';
         return;
     }
 
     spilToDisplay.forEach(game => {
-        const spilCard = document.createElement('div');
-        spilCard.className = 'product-card';
+        const spilCard = document.createElement("div");
+        spilCard.className = "product-card";
+
+        const antal = game.antalSpillere || [];
+
+        const spillerTekst = antal.length
+            ? `${Math.min(...antal)}-${Math.max(...antal)} personer`
+            : "Ikke angivet";
+
+        const tid = game.spilletid !== undefined
+            ? game.spilletid + " min"
+            : "Varierende";
+
+        const niveau =
+            game.sværhedsgrad ??
+            game.svaerhedsgrad ??
+            game.sværhed ??
+            "Ikke angivet";
 
         spilCard.innerHTML = `
-           
-       <img class="product-image ${game.titel.toLowerCase() === 'codenames' ? 'codenames-image' : ''}"
-     src="${game.billede}"
-     alt="${game.titel}">
-                <h3 class="product-title">${game.titel}</h3>
-                <p class="product-description">${genreTekst(game)}</p>
+            <img
+                class="product-image"
+                src="${game.billede}"
+                alt="${game.titel}"
+            >
 
-                <div class="product-meta">
-                    <span class="product-category">${game.type}</span>
-                    <span class="product-price">
-                        ${game.spilletid !== undefined ? game.spilletid + ' minutter' : 'Varierende spilletid'}
-                    </span>
+            <div class="product-info">
+                <h3 class="product-title">${game.titel}</h3>
+
+                <span class="product-rating">
+                    ★ ${game.rating ?? "4.7"}
+                </span>
+
+                <div class="product-details">
+                    <p>
+                        <span class="detail-icon">👥</span>
+                        ${spillerTekst}
+                    </p>
+
+                    <p>
+                        <span class="detail-icon">◷</span>
+                        ${tid}
+                    </p>
+
+                    <p>
+                        <span class="detail-icon">▥</span>
+                        ${niveau}
+                    </p>
                 </div>
-                <button class="product-button">Vis</button>
             </div>
+
+            <span class="heart-icon">♡</span>
         `;
 
-        spilCard.querySelector('.product-button').addEventListener('click', () => {
+        spilCard.addEventListener("click", () => {
             showSpilDialog(game);
         });
 
@@ -66,9 +100,6 @@ function showSpilDialog(game) {
     dialog.showModal();
 }
 
-filterToggle.addEventListener('click', () => {
-    window.location.href = "filter.html";
-});
 
 document.getElementById('dialog-close').addEventListener('click', () => dialog.close());
 

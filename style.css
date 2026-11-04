@@ -1,589 +1,214 @@
-/* Reset og base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #2ecc71;
-    --text-color: #333;
-    --light-gray: #ecf0f1;
-    --medium-gray: #bdc3c7;
-    --dark-gray: #7f8c8d;
-    --white: #ffffff;
-    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
-    --transition: all 0.3s ease;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light-gray);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header */
-header {
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 20px 0;
-    border-bottom: 2px solid var(--medium-gray);
-}
-
-header h1 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-}
-
-/* Søgeområde */
-.search-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.search-input {
-    padding: 15px 20px;
-    font-size: 1rem;
-    border: 2px solid var(--medium-gray);
-    border-radius: var(--border-radius);
-    background-color: var(--white);
-    transition: var(--transition);
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.search-input:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: var(--shadow);
-}
-
-.predefined-select {
-    padding: 12px 20px;
-    font-size: 1rem;
-    border: 2px solid var(--medium-gray);
-    border-radius: var(--border-radius);
-    background-color: var(--white);
-    transition: var(--transition);
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    cursor: pointer;
-}
-
-.predefined-select:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: var(--shadow);
-}
-
-.filter-button {
-    padding: 12px 25px;
-    font-size: 1rem;
-    background-color: var(--secondary-color);
-    color: var(--white);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    font-weight: 600;
-}
-
-.filter-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-}
-
-/* Slide-in Filter Panel */
-.filter-panel {
-    position: fixed;
-    top: 0;
-    right: -400px;
-    width: 400px;
-    height: 100vh;
-    background-color: var(--white);
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-}
-
-.filter-panel.active {
-    right: 0;
-}
-
-.filter-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 2px solid var(--light-gray);
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-.filter-header h2 {
-    font-size: 1.5rem;
-}
-
-.close-button {
-    background: none;
-    border: none;
-    color: var(--white);
-    font-size: 2rem;
-    cursor: pointer;
-    transition: var(--transition);
-    padding: 5px;
-}
-
-.close-button:hover {
-    color: var(--accent-color);
-    transform: rotate(90deg);
-}
-
-.filter-content {
-    padding: 20px;
-    flex: 1;
-    overflow-y: auto;
-}
-
-.filter-group {
-    margin-bottom: 25px;
-}
-
-.filter-group:last-child {
-    margin-bottom: 0;
-}
-
-.filter-label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-    font-size: 1.1rem;
-}
-
-/* Checkbox groups */
-.checkbox-group, .color-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.checkbox-label, .color-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-}
-
-.checkbox-label:hover, .color-label:hover {
-    background-color: var(--light-gray);
-}
-
-.checkbox-label input, .color-label input {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-}
-
-/* Filter footer */
-.filter-footer {
-    padding: 20px;
-    border-top: 2px solid var(--light-gray);
-    background-color: var(--light-gray);
-}
-
-.apply-button {
-    width: 100%;
-    padding: 15px 25px;
-    font-size: 1.1rem;
-    background-color: var(--accent-color);
-    color: var(--white);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 600;
-}
-
-.apply-button:hover {
-    background-color: #27ae60;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
-}
-
-/* Overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-}
-
-.overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 50px;
-    border-top: 2px solid var(--medium-gray);
-    color: var(--dark-gray);
-}
-
-dialog {
-    margin: auto;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    padding: 0;
-    max-width: 400px;
-    width: 90%;
-}
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5);
-}
-.dialog-content { padding: 1.5rem; }
-
-.dialog-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    padding: 0;
-    margin-top: 1rem;
-}
-
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .filter-panel {
-        width: 100%;
-        right: -100%;
-    }
-
-    .search-container {
-        max-width: 100%;
-    }
-
-    .products-container {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .products-container {
-        grid-template-columns: 1fr;
-    }
-
-    header h1 {
-        font-size: 2rem;
-    }
-
-    .search-input,
-    .predefined-select,
-    .filter-button {
-        width: 100%;
-    }
-}
-
-/* Animation for slide-in */
-@keyframes slideIn {
-    from {
-        right: -400px;
-    }
-    to {
-        right: 0;
-    }
-}
-
-@keyframes slideOut {
-    from {
-        right: 0;
-    }
-    to {
-        right: -400px;
-    }
-}
-
-/* Scrollbar styling for filter panel */
-.filter-content::-webkit-scrollbar {
-    width: 8px;
-}
-
-.filter-content::-webkit-scrollbar-track {
-    background: var(--light-gray);
-    border-radius: 10px;
-}
-
-.filter-content::-webkit-scrollbar-thumb {
-    background: var(--medium-gray);
-    border-radius: 10px;
-}
-
-.filter-content::-webkit-scrollbar-thumb:hover {
-    background: var(--dark-gray);
-}
-
-
 body {
     background: white;
+    color: black;
     font-family: Arial, sans-serif;
 }
 
+/* TURKIS TOP */
+
 .topbar {
+    width: 100%;
+    max-width: 420px;
     height: 55px;
-    max-width: 430px;
     margin: 20px auto 0;
-    background: #38ADB8;
-    border-radius: 20px 20px 0 0;
+    background: #39abb6;
+    border-radius: 18px 18px 0 0;
 }
 
+/* HELE SPILKATALOGET */
+
 .container {
-    max-width: 430px;
+    width: 100%;
+    max-width: 420px;
+    min-height: 100vh;
     margin: 0 auto;
-    padding: 15px 20px 100px;
+    padding: 20px 20px 110px;
     background: #f7f7f7;
 }
 
+/* OVERSKRIFT */
+
 header {
-    border: none;
-    margin-bottom: 10px;
-    padding: 0;
+    text-align: center;
+    margin-bottom: 12px;
 }
 
 header h1 {
-    font-family: Arial, sans-serif;
     font-size: 26px;
     font-weight: bold;
     color: black;
-    text-align: center;
 }
 
+/* SØGEFELT */
+
 .search-container {
-    margin-bottom: 8px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .search-input {
     width: 100%;
-    padding: 8px;
+    padding: 7px 10px;
     border: 1px solid #999;
-    background: #f2f2f2;
     border-radius: 5px;
+    background: #f1f1f1;
+    color: black;
     font-size: 13px;
 }
 
-/* Filterknap */
+.search-input:focus {
+    outline: 1px solid #39abb6;
+}
+
+/* FILTERKNAPPEN */
+
 .filter-button {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 100%;
-    max-width: none;
-    margin: 0;
     padding: 8px 0;
-    background: transparent;
+    background: none;
     border: none;
-    box-shadow: none;
     color: black;
     font-size: 24px;
     font-weight: bold;
-    text-align: left;
+    cursor: pointer;
 }
 
-.filter-button:hover {
-    background: transparent;
-    transform: none;
-}
+/* SPILLENE I TO KOLONNER */
 
-/* Skjul sortering, som ikke er i Figma */
-.predefined-select {
-    display: none;
-}
-
-/* To spillekort ved siden af hinanden */
 .products-container {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 90px 10px;
+    column-gap: 10px;
+    row-gap: 85px;
     margin-top: 80px;
-    padding: 0 5px;
 }
 
-/* Lysegrå spillekort */
+/* LYSEGRÅ SPILLEKORT */
+
 .product-card {
     position: relative;
     min-width: 0;
-    min-height: 190px;
+    min-height: 195px;
     background: linear-gradient(
         135deg,
         #f0f1f2,
         #dfe3e5
     );
     border-radius: 5px;
-    box-shadow: none;
-    overflow: visible;
     color: black;
+    overflow: visible;
     cursor: pointer;
 }
 
-.product-card:hover {
-    transform: none;
-    box-shadow: none;
-}
+/* SPILBILLEDER */
 
-/* Billeder over kortene */
 .product-image {
     position: absolute;
-    top: -75px;
+    top: -65px;
     left: 50%;
     transform: translateX(-50%);
-    width: 92%;
-    height: 150px;
+    width: 95%;
+    height: 130px;
     object-fit: contain;
     background: transparent;
     border: none;
     box-shadow: none;
+    z-index: 1;
 }
 
-/* Teksten */
+/* TEKSTEN PÅ KORTENE */
+
 .product-info {
-    padding: 85px 9px 12px;
+    padding: 75px 8px 18px;
 }
 
 .product-title {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
-    color: black;
+    line-height: 1.3;
     margin-bottom: 7px;
+    color: black;
     overflow-wrap: anywhere;
 }
 
-/* Turkis rating */
+/* TURKIS STJERNE */
+
 .product-rating {
     display: inline-block;
-    background: #079baa;
+    background: #079bab;
     color: white;
+    border-radius: 25px;
+    padding: 3px 9px;
     font-size: 12px;
-    padding: 3px 10px;
-    border-radius: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
 }
 
-/* Spiloplysninger */
+/* ANTAL SPILLERE, TID OG SVÆRHEDSGRAD */
+
 .product-details {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 9px;
 }
 
 .product-details p {
+    display: flex;
+    align-items: center;
+    gap: 4px;
     font-size: 11px;
-    line-height: 1.4;
     color: black;
-    margin: 0;
+    line-height: 1.3;
 }
 
 .detail-icon {
     display: inline-block;
     width: 17px;
-    font-size: 15px;
+    flex-shrink: 0;
+    font-size: 14px;
 }
 
-/* Turkist hjerte */
+/* TURKIST HJERTE */
+
 .heart-icon {
     position: absolute;
-    bottom: 5px;
     right: 8px;
+    bottom: 6px;
     color: #009dad;
-    background: transparent;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
+    font-size: 27px;
     line-height: 1;
 }
 
-/* Hvis ingen spil passer */
+/* INGEN SPIL FUNDET */
+
 .no-products {
     grid-column: 1 / -1;
     text-align: center;
+    font-size: 15px;
     color: black;
 }
 
-/* Menuen nederst */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 65px;
-    max-width: 430px;
-    margin: 0 auto;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    z-index: 100;
-}
 
-.bottom-nav svg {
-    width: 30px;
-    height: 30px;
-    color: black;
-}
+/* MOBIL */
 
-.bottom-nav a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Mobil */
-@media (max-width: 480px) {
-    .products-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (max-width: 360px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
- .product-card {
-    padding: 0;
-}
+    .product-title {
+        font-size: 11px;
+    }
 
-.products-container {
-    row-gap: 65px;
-}
-
-.product-image {
-    object-fit: contain;
-}
+    .product-details p {
+        font-size: 10px;
+    }
 }
