@@ -24,14 +24,11 @@ function displaySpil(spilToDisplay) {
         const spilCard = document.createElement('div');
         spilCard.className = 'product-card';
 
-        spilCard.innerHTML = 
-            <img
-            class="product-image"
-            src="${game.billede}"
-             alt="${game.titel}">
-
-        
-            <div class="product-info">
+        spilCard.innerHTML = `
+           
+       <img class="product-image ${game.titel.toLowerCase() === 'codenames' ? 'codenames-image' : ''}"
+     src="${game.billede}"
+     alt="${game.titel}">
                 <h3 class="product-title">${game.titel}</h3>
                 <p class="product-description">${genreTekst(game)}</p>
 
@@ -41,7 +38,6 @@ function displaySpil(spilToDisplay) {
                         ${game.spilletid !== undefined ? game.spilletid + ' minutter' : 'Varierende spilletid'}
                     </span>
                 </div>
-
                 <button class="product-button">Vis</button>
             </div>
         `;
