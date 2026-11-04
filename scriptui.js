@@ -19,6 +19,14 @@ function displaySpil(spilToDisplay) {
     }
 
     spilToDisplay.forEach(game => {
+
+    const niveauIkon = {
+    "Let": "billeder/let.png",
+    "Mellem": "billeder/mellem.png",
+    "Svær": "billeder/svaer.png"
+    }[game.sværhedsgrad];
+
+
         const spilCard = document.createElement("div");
         spilCard.className = "product-card";
 
@@ -32,11 +40,6 @@ function displaySpil(spilToDisplay) {
             ? game.spilletid + " min"
             : "Varierende";
 
-        const niveau =
-            game.sværhedsgrad ??
-            game.svaerhedsgrad ??
-            game.sværhed ??
-            "Ikke angivet";
 
         spilCard.innerHTML = `
             <img
@@ -49,28 +52,29 @@ function displaySpil(spilToDisplay) {
                 <h3 class="product-title">${game.titel}</h3>
 
                 <span class="product-rating">
-                    ★ ${game.rating ?? "4.7"}
+                    <span class="carbon--star-filled"> </span> ${game.rating ?? "4.7"}
                 </span>
 
                 <div class="product-details">
                     <p>
-                        <span class="detail-icon">👥</span>
+                       <span class="heroicons--users-20-solid"></span>
                         ${spillerTekst}
                     </p>
 
                     <p>
-                        <span class="detail-icon">◷</span>
+                       <span class="akar-icons--clock"></span>
                         ${tid}
                     </p>
 
-                    <p>
-                        <span class="detail-icon">▥</span>
-                        ${niveau}
-                    </p>
+         <p>
+   <p>
+    <img class="niveau-ikon" src="${niveauIkon}" alt="">
+    ${game.sværhedsgrad ?? "Ikke angivet"}
+</p>
                 </div>
             </div>
 
-            <span class="heart-icon">♡</span>
+            <span class="akar-icons--heart"></span>
         `;
 
         spilCard.addEventListener("click", () => {

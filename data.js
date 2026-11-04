@@ -11,6 +11,7 @@ const spil = [
         spilletid: "30-60",
         samarbejdsspil: true,
         sprog: ["Dansk",],
+        sværhedsgrad: "Let",
     },
     {
         titel: "Codenames",
@@ -22,6 +23,7 @@ const spil = [
         spilletid: "15-25",
         samarbejdsspil: true,
          sprog: ["Dansk", "Engelsk",],
+         sværhedsgrad: "Mellem",
     },
     {
         titel: "Skyjo",
@@ -33,6 +35,7 @@ const spil = [
         spilletid: "20-30",
         samarbejdsspil: false,
         sprog: ["Dansk", "Engelsk",],
+        sværhedsgrad: "Let",
     },
     {
         titel: "Uno",
@@ -44,6 +47,7 @@ const spil = [
         spilletid: "15-30",
         samarbejdsspil: false,
         sprog: ["Dansk", "Engelsk",],
+        sværhedsgrad: "Let",
     },
     {
         titel: "Skipbo",
@@ -55,6 +59,7 @@ const spil = [
         spilletid: "20-30",
         samarbejdsspil: true,
         sprog: ["Dansk", "Engelsk",],
+        sværhedsgrad: "Let",
     },
     {
         titel: "Partners",
@@ -66,6 +71,7 @@ const spil = [
         spilletid: "30-45",
         samarbejdsspil: true,
         sprog: ["Dansk", "Engelsk",],
+        sværhedsgrad: "let",
     },
     {
         titel: "Bezzerwizzer",
@@ -77,6 +83,7 @@ const spil = [
         spilletid: "60-90",
         samarbejdsspil: true,
         sprog: ["Dansk",],
+        sværhedsgrad: "Svær",
     },
     {
         titel: "Carcasonne",
@@ -88,6 +95,7 @@ const spil = [
         spilletid: "30-45",
         samarbejdsspil: false,
         sprog: ["Dansk", "Engelsk",],
+        sværhedsgrad: "Svær",
     },
     {
         titel: "Det Dårlige Selskab",
@@ -99,6 +107,7 @@ const spil = [
         spilletid: "30-50",
         samarbejdsspil: false,
         sprog: ["Dansk",],
+        sværhedsgrad: "Let",
     },
     {
         titel: "Hitser",
@@ -110,6 +119,7 @@ const spil = [
         spilletid: "30",
         samarbejdsspil: true,
         sprog: ["Dansk", "Engelsk",],
+        sværhedsgrad: "Let",
     },
     {
         titel: "One Night Werewolf",
@@ -121,6 +131,7 @@ const spil = [
         spilletid: "10-15",
         samarbejdsspil: true,
         sprog: ["Engelsk",],
+        sværhedsgrad: "Mellem",
     },
     {
         titel: "Secret Hitler",
@@ -132,6 +143,8 @@ const spil = [
         spilletid: "30-45",
         samarbejdsspil: true,
         sprog: ["Engelsk",],
+        sværhedsgrad: "Let",
+
     },
     
 ];
