@@ -74,14 +74,33 @@ function displaySpil(spilToDisplay) {
                 </div>
             </div>
 
-            <span class="akar-icons--heart"></span>
+           <button type="button" class="heart-icon">
+        ${favoritter.includes(game.titel) ? "♥" : "♡"}
+            </button>
         `;
 
         spilCard.addEventListener("click", () => {
             showSpilDialog(game);
         });
 
+    spilCard.querySelector(".heart-icon").addEventListener("click", (event) => {
+    event.stopPropagation();
+
+    const index = favoritter.indexOf(game.titel);
+
+    if (index === -1) {
+        favoritter.push(game.titel);
+    } else {
+        favoritter.splice(index, 1);
+    }
+
+    localStorage.setItem("favoritter", JSON.stringify(favoritter));
+
+    event.currentTarget.textContent =
+        favoritter.includes(game.titel) ? "♥" : "♡";
+});
         spilContainer.appendChild(spilCard);
+
     });
 }
 
