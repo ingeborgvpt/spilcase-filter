@@ -6,10 +6,7 @@ const genreTekst = game =>
         ? game.genre.join(", ")
         : game.genre;
 
-const filterPanel = document.getElementById('filter-panel');
-const overlay = document.getElementById('overlay');
 const filterToggle = document.getElementById('filter-toggle');
-const closeFilter = document.getElementById('close-filter');
 const spilContainer = document.getElementById('products-container');
 
 function displaySpil(spilToDisplay) {
@@ -72,33 +69,9 @@ function showSpilDialog(game) {
 filterToggle.addEventListener('click', () => {
     window.location.href = "filter.html";
 });
-closeFilter.addEventListener('click', closeFilterPanel);
-overlay.addEventListener('click', closeFilterPanel);
 
 document.getElementById('dialog-close').addEventListener('click', () => dialog.close());
 
-function closeFilterPanel() {
-    filterPanel.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-function toggleFilterPanel() {
-    filterPanel.classList.toggle('active');
-    overlay.classList.toggle('active');
-
-    if (filterPanel.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = 'auto';
-    }
-}
-
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && filterPanel.classList.contains('active')) {
-        closeFilterPanel();
-    }
-});
 
 filterToggle.addEventListener('click', () => {
     window.location.href = "filter.html";
