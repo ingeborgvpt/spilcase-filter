@@ -1,6 +1,11 @@
 
 "use strict";
 
+const genreTekst = game =>
+    Array.isArray(game.genre)
+        ? game.genre.join(", ")
+        : game.genre;
+
 const filterPanel = document.getElementById('filter-panel');
 const overlay = document.getElementById('overlay');
 const filterToggle = document.getElementById('filter-toggle');
@@ -22,7 +27,7 @@ function displaySpil(spilToDisplay) {
         spilCard.innerHTML = `
             <div class="product-info">
                 <h3 class="product-title">${game.titel}</h3>
-                <p class="product-description">${game.genre.join(', ')}</p>
+                <p class="product-description">${genreTekst(game)}</p>
 
                 <div class="product-meta">
                     <span class="product-category">${game.type}</span>
@@ -48,7 +53,7 @@ const dialog = document.getElementById('product-dialog');
 function showSpilDialog(game) {
     document.getElementById('dialog-title').textContent = game.titel;
     document.getElementById('dialog-type').textContent = 'Type: ' + game.type;
-    document.getElementById('dialog-genre').textContent = 'Genre: ' + game.genre.join(', ');
+    document.getElementById('dialog-genre').textContent = 'Genre: ' + genreTekst(game);
 
     document.getElementById('dialog-players').textContent =
         game.antalSpillere ? 'Antal spillere: ' + game.antalSpillere.join(', ') : 'Antal spillere: Ikke angivet';
@@ -62,8 +67,7 @@ function showSpilDialog(game) {
     dialog.showModal();
 }
 
-filterToggle.addEventListener('click', toggleFilterPanel);
- filterToggle.addEventListener('click', () => {
+filterToggle.addEventListener('click', () => {
     window.location.href = "filter.html";
 });
 closeFilter.addEventListener('click', closeFilterPanel);
@@ -94,6 +98,7 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-    displaySpil(spil);
+filterToggle.addEventListener('click', () => {
+    window.location.href = "filter.html";
 });
+
