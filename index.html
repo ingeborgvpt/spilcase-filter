@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="da">
 
+<!DOCTYPE html>
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,97 +17,41 @@
         </header>
 
         <main>
+            <!-- Søgning -->
             <div class="search-container">
-                <input type="search" id="search-input" placeholder="Søg efter produkter..." class="search-input">
-            </div>
-        </main>
-
-        <select id="predefined-search" class="predefined-select">
-            <option value="">---- Sorter efter ----</option>
-            <option value="titel-az">Titel: A-Å</option>
-            <option value="titel-za">Titel: Å-A</option>
-            <option value="tid-stigende">Korteste spilletid</option>
-            <option value="tid-faldende">Længste spilletid</option>
-        </select>
-
-        <button id="filter-toggle" class="filter-button">
-            <span>🔍 Filtrer</span>
-        </button>
-    </div>
-
-            <div id="filter-panel" class="filter-panel">
-                <div class="filter-header">
-                    <h2>Filtrer Produkter</h2>
-                    <button id="close-filter" class="close-button">&times;</button>
-                </div>
-
-                <div class="filter-content">            
-                    <div class="filter-group">
-                        <label class="filter-label">Spiltype</label>
-                        <div class="checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="type" value="Brætspil"> Brætspil
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="type" value="Kortspil"> Kortspil
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="type" value="Videospil"> Videospil
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="type" value="Selskabsspil"> Selskabsspil
-                            </label>
-                        </div>
-                    </div>
-
-    <div class="filter-group">
-        <label class="filter-label">Spilletid (minutter)</label>
-            <div class="price-range">
-                 <input type="number" id="min-time" placeholder="Min. tid" class="price-input">
-                 <span class="price-separator">-</span>
-                 
-                 <input type="number" id="max-time" placeholder="Maks. tid" class="price-input">
-            </div>
-    </div>
-
-<div class="filter-group">
-    <label class="filter-label">Genre</label>
-    <div class="checkbox-group">
-        <label class="checkbox-label">
-            <input type="checkbox" name="genre" value="Strategi"> Strategi
-        </label>
-        <label class="checkbox-label">
-            <input type="checkbox" name="genre" value="Familiespil"> Familiespil
-        </label>
-        <label class="checkbox-label">
-            <input type="checkbox" name="genre" value="Adventure"> Adventure
-        </label>
-        <label class="checkbox-label">
-            <input type="checkbox" name="genre" value="Quiz"> Quiz
-        </label>
-        <label class="checkbox-label">
-            <input type="checkbox" name="genre" value="Survival"> Survival
-        </label>
-    </div>
-</div>
-
-<div class="filter-group">
-    <label class="filter-label">Samarbejdsspil</label>
-    <div class="checkbox-group">
-        <label class="checkbox-label">
-            <input type="checkbox" id="cooperative-only">
-            Vis kun samarbejdsspil
-        </label>
-    </div>
-</div>
-                <div class="filter-footer">
-                    <button id="apply-filters" class="apply-button">Vis Produkter</button>
-                </div>
-            </div>
+                <input
+                    type="search"
+                    id="search-input"
+                    placeholder="Søg efter spil..."
+                    class="search-input"
+                    aria-label="Søg efter spil"
+                >
             </div>
 
-            <div id="products-container" class="products-container">
-            </div>
+            <!-- Sortering -->
+            <select
+                id="predefined-search"
+                class="predefined-select"
+                aria-label="Sorter spil"
+            >
+                <option value="">---- Sorter efter ----</option>
+                <option value="titel-az">Titel: A-Å</option>
+                <option value="titel-za">Titel: Å-A</option>
+                <option value="tid-stigende">Korteste spilletid</option>
+                <option value="tid-faldende">Længste spilletid</option>
+            </select>
+
+            <!-- Åbn filterpanelet -->
+            <button
+                type="button"
+                id="filter-toggle"
+                class="filter-button"
+            >
+                <span>🔍 Filtrer</span>
+            </button>
+
+            <!-- Spillene indsættes her med JavaScript -->
+            <div id="products-container" class="products-container"></div>
         </main>
 
         <footer>
@@ -113,25 +59,156 @@
         </footer>
     </div>
 
-    <dialog id="product-dialog">
-    <article class="dialog-content">
-        <h2 id="dialog-title"></h2>
-        <p id="dialog-type"></p>
-        <p id="dialog-genre"></p>
-        <p id="dialog-players"></p>
-        <p id="dialog-time"></p>
-        <p id="dialog-producer"></p>
+    <!-- Filterpanel -->
+    <div id="filter-panel" class="filter-panel">
+        <div class="filter-header">
+            <h2>Filtrer spil</h2>
 
-        <menu class="dialog-actions">
-            <button id="dialog-close" value="cancel">Luk</button>
-        </menu>
-    </article>
-</dialog>
+            <button
+                type="button"
+                id="close-filter"
+                class="close-button"
+                aria-label="Luk filtre"
+            >
+                &times;
+            </button>
+        </div>
 
+        <div class="filter-content">
+            <!-- Spiltype -->
+            <div class="filter-group">
+                <h3 class="filter-label">Spiltype</h3>
+
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="type" value="Brætspil">
+                        Brætspil
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="type" value="Kortspil">
+                        Kortspil
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="type" value="Videospil">
+                        Videospil
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="type" value="Selskabsspil">
+                        Selskabsspil
+                    </label>
+                </div>
+            </div>
+
+            <!-- Spilletid -->
+            <div class="filter-group">
+                <h3 class="filter-label">Spilletid (minutter)</h3>
+
+                <div class="price-range">
+                    <input
+                        type="number"
+                        id="min-time"
+                        placeholder="Min. tid"
+                        class="price-input"
+                        min="0"
+                        aria-label="Minimum spilletid i minutter"
+                    >
+
+                    <span class="price-separator">-</span>
+
+                    <input
+                        type="number"
+                        id="max-time"
+                        placeholder="Maks. tid"
+                        class="price-input"
+                        min="0"
+                        aria-label="Maksimum spilletid i minutter"
+                    >
+                </div>
+            </div>
+
+            <!-- Genre -->
+            <div class="filter-group">
+                <h3 class="filter-label">Genre</h3>
+
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="genre" value="Strategi">
+                        Strategi
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="genre" value="Familiespil">
+                        Familiespil
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="genre" value="Adventure">
+                        Adventure
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="genre" value="Quiz">
+                        Quiz
+                    </label>
+
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="genre" value="Survival">
+                        Survival
+                    </label>
+                </div>
+            </div>
+
+            <!-- Samarbejdsspil -->
+            <div class="filter-group">
+                <h3 class="filter-label">Samarbejdsspil</h3>
+
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="cooperative-only">
+                        Vis kun samarbejdsspil
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-footer">
+            <button
+                type="button"
+                id="apply-filters"
+                class="apply-button"
+            >
+                Vis spil
+            </button>
+        </div>
+    </div>
+
+    <!-- Dialog med oplysninger om et spil -->
+    <dialog id="product-dialog" aria-labelledby="dialog-title">
+        <article class="dialog-content">
+            <h2 id="dialog-title"></h2>
+            <p id="dialog-type"></p>
+            <p id="dialog-genre"></p>
+            <p id="dialog-players"></p>
+            <p id="dialog-time"></p>
+            <p id="dialog-producer"></p>
+
+            <div class="dialog-actions">
+                <button type="button" id="dialog-close" value="cancel">
+                    Luk
+                </button>
+            </div>
+        </article>
+    </dialog>
+
+    <!-- Baggrund bag det åbne filterpanel -->
     <div id="overlay" class="overlay"></div>
+
+    <!-- JavaScript -->
     <script src="data.js"></script>
     <script src="scriptui.js"></script>
     <script src="scriptfilt.js"></script>
 </body>
-
 </html>
