@@ -3,6 +3,7 @@
 const spil = [
     {
         titel: "Hint",
+        billede: "billeder/hint.png",
         type: "Brætspil",
         genre: "Holdspil",
         vibe: ["Performance", "Sjovt",],
@@ -13,6 +14,7 @@ const spil = [
     },
     {
         titel: "Codenames",
+        billede: "billeder/Frame 112.png",
         type: "Mindgame",
         genre: "Holspil",
         vibe: ["Samarbejde", "Strategi",],
@@ -23,6 +25,7 @@ const spil = [
     },
     {
         titel: "Skyjo",
+        billede: "billeder/Frame 113.png",
         type: "Kortspil",
         genre: "Strategi",
         vibe: ["Konkurrence", "Hygge",],
@@ -33,6 +36,7 @@ const spil = [
     },
     {
         titel: "Uno",
+        billede: "billeder/Frame 116.png",
         type: "Kortspil",
         genre: "Kortspil",
         vibe: ["Familiespil", "Held",],
@@ -43,6 +47,7 @@ const spil = [
     },
     {
         titel: "Skipbo",
+        billede: "billeder/Frame 117.png",
         type: "Kortspil",
         genre: "Kortspil",
         vibe: ["Hygge", "Held", "Familiespil"],
@@ -53,6 +58,7 @@ const spil = [
     },
     {
         titel: "Partners",
+        billede: "billeder/Frame 120.png",
         type: "Brætspil",
         genre: ["Strategi", "Holdspil"],
         vibe: ["Strategi", "Familiespil",],
@@ -63,6 +69,7 @@ const spil = [
     },
     {
         titel: "Bezzerwizzer",
+        billede: "billeder/Frame 121.png",
         type: "Quizspil",
         genre: "Individuelt/Hold",
         vibe: ["Trivia", "Strategi",],
@@ -73,6 +80,7 @@ const spil = [
     },
     {
         titel: "Carcasonne",
+        billede: "billeder/Frame 124.png",
         type: "Brætspil",
         genre: "Individuelt",
         vibe: ["Strategi", "Landscaping",],
@@ -83,6 +91,7 @@ const spil = [
     },
     {
         titel: "Det Dårlige Selskab",
+        billede: "billeder/Frame 107.png",
         type: "Selskabsspil",
         genre: "Individuelt",
         vibe: ["Fest", "Grin", "God stemning"],
@@ -93,6 +102,7 @@ const spil = [
     },
     {
         titel: "Hitser",
+        billede: "billeder/hitster.png",
         type: "Quizspil",
         genre: "Holdspil",
         vibe: ["Musik", "Fest stemning",],
@@ -103,6 +113,7 @@ const spil = [
     },
     {
         titel: "One Night Werewolf",
+        billede: "billeder/Frame 128.png",
         type: "Selskabsspil",
         genre: "Hold/individuelt",
         vibe: ["Rollespil", "Murder mystery", "Mind game"],
@@ -113,6 +124,7 @@ const spil = [
     },
     {
         titel: "Secret Hitler",
+        billede: "billeder/Frame 129.png",
         type: "Selskabsspil",
         genre: "Holdspil",
         vibe: ["Mindgame", "Manipulation", "Rollespil",],

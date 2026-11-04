@@ -24,7 +24,13 @@ function displaySpil(spilToDisplay) {
         const spilCard = document.createElement('div');
         spilCard.className = 'product-card';
 
-        spilCard.innerHTML = `
+        spilCard.innerHTML = 
+            <img
+            class="product-image"
+            src="${game.billede}"
+             alt="${game.titel}">
+
+        
             <div class="product-info">
                 <h3 class="product-title">${game.titel}</h3>
                 <p class="product-description">${genreTekst(game)}</p>
