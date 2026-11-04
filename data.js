@@ -25,7 +25,7 @@ const spil = [
         titel: "Skyjo",
         type: "Kortspil",
         genre: "Strategi",
-        vibe: ["konkurrence", "hygge",],
+        vibe: ["Konkurrence", "Hygge",],
         antalSpillere: [2,3,4,5,6,7,8],
         spilletid: 20-30,
         samarbejdsspil: false,
