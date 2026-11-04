@@ -63,6 +63,9 @@ function showSpilDialog(game) {
 }
 
 filterToggle.addEventListener('click', toggleFilterPanel);
+ filterToggle.addEventListener('click', () => {
+    window.location.href = "filter.html";
+});
 closeFilter.addEventListener('click', closeFilterPanel);
 overlay.addEventListener('click', closeFilterPanel);
 
