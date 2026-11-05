@@ -76,7 +76,7 @@ const spil = [
         spilletid: "30-45",
         samarbejdsspil: true,
         sprog: ["Dansk", "Engelsk",],
-        sværhedsgrad: "let",
+        sværhedsgrad: "Let",
         rating: 4.5,
     },
     {
