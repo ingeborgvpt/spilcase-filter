@@ -12,6 +12,7 @@ const spil = [
         samarbejdsspil: true,
         sprog: ["Dansk",],
         sværhedsgrad: "Let",
+        rating: 4.6,
     },
     {
         titel: "Codenames",
@@ -24,6 +25,7 @@ const spil = [
         samarbejdsspil: true,
          sprog: ["Dansk", "Engelsk",],
          sværhedsgrad: "Mellem",
+         rating: 4.8,
     },
     {
         titel: "Skyjo",
@@ -36,6 +38,7 @@ const spil = [
         samarbejdsspil: false,
         sprog: ["Dansk", "Engelsk",],
         sværhedsgrad: "Let",
+        rating: 4.7,
     },
     {
         titel: "Uno",
@@ -48,6 +51,7 @@ const spil = [
         samarbejdsspil: false,
         sprog: ["Dansk", "Engelsk",],
         sværhedsgrad: "Let",
+        rating: 4.4,
     },
     {
         titel: "Skipbo",
@@ -60,6 +64,7 @@ const spil = [
         samarbejdsspil: true,
         sprog: ["Dansk", "Engelsk",],
         sværhedsgrad: "Let",
+        rating: 3.9,
     },
     {
         titel: "Partners",
@@ -72,6 +77,7 @@ const spil = [
         samarbejdsspil: true,
         sprog: ["Dansk", "Engelsk",],
         sværhedsgrad: "let",
+        rating: 4.5,
     },
     {
         titel: "Bezzerwizzer",
@@ -84,6 +90,7 @@ const spil = [
         samarbejdsspil: true,
         sprog: ["Dansk",],
         sværhedsgrad: "Svær",
+        rating: 4.0,
     },
     {
         titel: "Carcasonne",
@@ -96,6 +103,7 @@ const spil = [
         samarbejdsspil: false,
         sprog: ["Dansk", "Engelsk",],
         sværhedsgrad: "Svær",
+        rating: 3.8,
     },
     {
         titel: "Det Dårlige Selskab",
@@ -108,6 +116,7 @@ const spil = [
         samarbejdsspil: false,
         sprog: ["Dansk",],
         sværhedsgrad: "Let",
+        rating: 4.7,
     },
     {
         titel: "Hitser",
@@ -120,6 +129,7 @@ const spil = [
         samarbejdsspil: true,
         sprog: ["Dansk", "Engelsk",],
         sværhedsgrad: "Let",
+        rating: 4.9,
     },
     {
         titel: "One Night Werewolf",
@@ -132,6 +142,7 @@ const spil = [
         samarbejdsspil: true,
         sprog: ["Engelsk",],
         sværhedsgrad: "Mellem",
+        rating: 4.5,
     },
     {
         titel: "Secret Hitler",
@@ -144,6 +155,7 @@ const spil = [
         samarbejdsspil: true,
         sprog: ["Engelsk",],
         sværhedsgrad: "Let",
+        rating: 4.9,
 
     },
     

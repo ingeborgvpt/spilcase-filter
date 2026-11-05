@@ -299,13 +299,67 @@ header h1 {
 }
 
 .heart-icon {
+    position: absolute;
     right: 8px;
     bottom: 6px;
-    color: #009dad;
-    font-size: 24px;
-    line-height: 1;
-    background: none;
-border: none;
-padding: 0;
-cursor: pointer;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.heart-icon svg {
+    width: 25px;
+    height: 30px;
+    fill: none;
+    stroke: #009dad;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.heart-icon[aria-pressed="true"] svg {
+    fill: #009dad;
+}
+
+
+/* SORTERING */
+
+.sort-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+}
+
+.sort-container label {
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.sort-container select {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Filterknappen skal ligne en knap, ikke et link */
+
+.filter-button {
+    text-decoration: none;
 }

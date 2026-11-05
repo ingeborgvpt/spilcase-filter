@@ -30,20 +30,41 @@
                     aria-label="Søg efter spil"
                 >
             </div>
+            
+
+    
+    
+
 
             <!-- Åbn filterpanelet -->
-            <button
-                type="button"
-                id="filter-toggle"
-                class="filter-button"
-            >
-            <a href="filter.html" id="filter-toggle" class="filter-button">
-               <span class="boxicons--filter-filled"></span> Filtrer</span>
-               </a>
-            </button>
+           <a href="filter.html" id="filter-toggle" class="filter-button">
+             <span class="boxicons--filter-filled"></span>
+              <span>Filtrer</span>
+            </a>
+<!-- Sortering -->
+    <div class="sort-container">
+    <label for="sort-spil">Sortér efter:</label>
 
+    <select id="sort-spil">
+        <option value="standard">Standard</option>
+        <option value="rating">Bedst bedømte først</option>
+        <option value="faerrest">Færrest spillere først</option>
+        <option value="flest">Flest spillere først</option>
+        <option value="kort">Korteste spil først</option>
+        <option value="lang">Længste spil først</option>
+        <option value="favoritter">Favoritter</option>
+        <option value="navn">Navn A–Å</option>
+    </select>
+    
+</div>
             <!-- Spillene indsættes her med JavaScript -->
             <div id="products-container" class="products-container"></div>
+
+            
+
+
+
+
         </main>
     </div>
 

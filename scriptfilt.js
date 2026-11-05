@@ -109,13 +109,90 @@ if (søgefelt && søgefelt.value.trim()) {
         return søgetekst.includes(søgning);
     });
 }
+
+/* SORTERING AF SPIL */
+
+const sortering = document.getElementById("sort-spil")?.value;
+
+// Find minutterne i spilletiden, fx "30-60"
+const tidTal = game =>
+    String(game.spilletid ?? "")
+        .match(/\d+/g)?.map(Number) || [];
+
+// Find antal spillere
+const spillerTal = game => game.antalSpillere || [];
+
+// Bedst bedømte først
+if (sortering === "rating") {
+    filteredSpil.sort((a, b) =>
+        (Number(b.rating) || 0) -
+        (Number(a.rating) || 0)
+    );
+}
+
+// Færrest spillere først
+if (sortering === "faerrest") {
+    filteredSpil.sort((a, b) =>
+        Math.min(...spillerTal(a)) -
+        Math.min(...spillerTal(b))
+    );
+}
+
+// Flest spillere først
+if (sortering === "flest") {
+    filteredSpil.sort((a, b) =>
+        Math.max(...spillerTal(b)) -
+        Math.max(...spillerTal(a))
+    );
+}
+
+// Korteste spil først
+if (sortering === "kort") {
+    filteredSpil.sort((a, b) =>
+        (tidTal(a)[0] ?? Infinity) -
+        (tidTal(b)[0] ?? Infinity)
+    );
+}
+
+// Længste spil først
+if (sortering === "lang") {
+    filteredSpil.sort((a, b) => {
+        const tidA = tidTal(a);
+        const tidB = tidTal(b);
+
+        return (tidB[tidB.length - 1] ?? -1) -
+               (tidA[tidA.length - 1] ?? -1);
+    });
+}
+
+// KUN FAVORITSPIL
+if (sortering === "favoritter") {
+    const gemteFavoritter = JSON.parse(
+        localStorage.getItem("favoritter") || "[]"
+    );
+
+    filteredSpil = filteredSpil.filter(game =>
+        gemteFavoritter.includes(game.titel)
+    );
+}
+
+// Navn A–Å
+if (sortering === "navn") {
+    filteredSpil.sort((a, b) =>
+        a.titel.localeCompare(b.titel, "da")
+    );
+}
     
     // VIS KUN DE SPIL, DER PASSER
     displaySpil(filteredSpil);
 }
 
+
+
 // Start filtreringen automatisk
 document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("sort-spil")
+    ?.addEventListener("change", filtrerSpil);
 
     document.getElementById("search-input")
         ?.addEventListener("input", filtrerSpil);

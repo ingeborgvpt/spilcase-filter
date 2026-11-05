@@ -8,6 +8,7 @@ const genreTekst = game =>
 
 const filterToggle = document.getElementById('filter-toggle');
 const spilContainer = document.getElementById('products-container');
+const favoritter = JSON.parse(localStorage.getItem("favoritter") || "[]");
 
 function displaySpil(spilToDisplay) {
     spilContainer.innerHTML = "";
@@ -39,7 +40,6 @@ function displaySpil(spilToDisplay) {
         const tid = game.spilletid !== undefined
             ? game.spilletid + " min"
             : "Varierende";
-
 
         spilCard.innerHTML = `
             <img
@@ -74,9 +74,11 @@ function displaySpil(spilToDisplay) {
                 </div>
             </div>
 
-           <button type="button" class="heart-icon">
-        ${favoritter.includes(game.titel) ? "♥" : "♡"}
-            </button>
+           <button type="button" class="heart-icon" aria-pressed="${favoritter.includes(game.titel)}">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/>
+    </svg>
+</button>
         `;
 
         spilCard.addEventListener("click", () => {
@@ -95,9 +97,17 @@ function displaySpil(spilToDisplay) {
     }
 
     localStorage.setItem("favoritter", JSON.stringify(favoritter));
+    
+event.currentTarget.setAttribute(
+    "aria-pressed",
+    String(favoritter.includes(game.titel))
+);
 
-    event.currentTarget.textContent =
-        favoritter.includes(game.titel) ? "♥" : "♡";
+if (document.getElementById("sort-spil")?.value === "favoritter") {
+    filtrerSpil();
+}
+
+
 });
         spilContainer.appendChild(spilCard);
 
