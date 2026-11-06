@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Filtrer spillene</title>
+
+    <link rel="stylesheet" href="filter.css">
+    
+
+</head>
+<body>
+<div class="toopbar"></div>
+
+<main class="filter-side">
+
+<a href="index.html" class="luk"> </a>
+
+<h1> FILTRER SPILLENE</h1>
+
+<form action="index.html" method="get">
+
+<h1>
+<span class="heroicons--users-20-solid"></span>
+Antal Spillere
+</h1>
+
+<div class="knapper">
+                <label><input type="checkbox" name="spillere" value="2">2</label>
+                <label><input type="checkbox" name="spillere" value="3">3</label>
+                <label><input type="checkbox" name="spillere" value="4">4</label>
+                <label><input type="checkbox" name="spillere" value="5">5</label>
+                <label><input type="checkbox" name="spillere" value="6">6</label>
+                <label><input type="checkbox" name="spillere" value="7">7</label>
+                <label><input type="checkbox" name="spillere" value="8">8</label>
+                <label><input type="checkbox" name="spillere" value="8+">8+</label>
+            </div>
+        </section>
+
+        <section>
+            <h2>
+                <span class="cib--apache-spark"></span>
+                 Vibe
+            </h2>
+
+            <div class="knapper">
+                <label><input type="checkbox" name="vibe" value="Quiz">Quiz</label>
+                <label><input type="checkbox" name="vibe" value="Kortspil">Kortspil</label>
+                <label><input type="checkbox" name="vibe" value="Mystery">Mystery</label>
+                <label><input type="checkbox" name="vibe" value="Party">Party</label>
+                <label><input type="checkbox" name="vibe" value="Performance">Performance</label>
+            </div>
+        </section>
+
+        <section>
+            <h2>
+                <span class="fluent--hourglass-three-quarter-20-regular"></span>
+                 Spilletid
+            </h2>
+
+            <div class="knapper">
+                <label><input type="checkbox" name="tid" value="0-15">Under 15 min</label>
+                <label><input type="checkbox" name="tid" value="15-30">15-30 min</label>
+                <label><input type="checkbox" name="tid" value="30-45">30-45 min</label>
+                <label><input type="checkbox" name="tid" value="45+">45+ min</label>
+            </div>
+        </section>
+
+        <section>
+            <h2>
+        <span class="bi--globe-americas-fill"></span>
+             Sprog
+            </h2>
+
+            <div class="knapper">
+                <label><input type="checkbox" name="sprog" value="Dansk">DA</label>
+                <label><input type="checkbox" name="sprog" value="Engelsk">EN</label>
+            </div>
+        </section>
+
+        <button class="vis-spil" type="submit">VIS SPIL</button>
+        <button class="nulstil" type="reset">Nulstil filtre</button>
+
+    </form>
+</main>
+    
+</body>
+</html>
